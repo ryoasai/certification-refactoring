@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util">
+
+	<description>Example configuration to get you started.</description>
+
+	<context:annotation-config />
+	<context:component-scan base-package="sample" />
+	
+	<context:property-placeholder location="classpath:sample.properties"/>
+	
+	<util:map id="functionMap">
+		<entry key="S" value-ref="searchHRListFunction" />
+		<entry key="JI" value-ref="inputHRFunction" />
+		<entry key="JU" value-ref="updateHRFunction" />
+		<entry key="JD" value-ref="deleteHRFunction" />
+		<entry key="KI" value-ref="inputWorkFunction" />
+		<entry key="KD" value-ref="deleteWorkFunction" />
+	</util:map>
+</beans>
