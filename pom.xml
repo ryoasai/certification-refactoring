@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 	<name>certification-refactoring</name>
 	<url>http://www.springframework.org</url>
-	<description>サーティファイのJavaプログラミング能力認定試験の例題をオブジェクト指向で完全にリファクタリングする例です。</description>
+	<description>Java繝励Ο繧ｰ繝ｩ繝溘Φ繧ｰ閭ｽ蜉幄ｪ榊ｮ夊ｩｦ鬨薙�ｮ繝ｪ繝輔ぃ繧ｯ繧ｿ繝ｪ繝ｳ繧ｰ繧ｵ繝ｳ繝励Ν</description>
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<spring.framework.version>3.0.5.RELEASE</spring.framework.version>
