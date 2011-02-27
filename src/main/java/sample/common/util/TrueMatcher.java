@@ -1,4 +1,4 @@
-﻿package sample.common.util;
+package sample.common.util;
 
 public class TrueMatcher<T> implements Matcher<T> {
 

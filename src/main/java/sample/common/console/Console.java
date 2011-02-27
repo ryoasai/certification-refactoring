@@ -1,4 +1,4 @@
-﻿package sample.common.console;
+package sample.common.console;
 
 import java.util.Date;
 import java.util.List;

@@ -1,4 +1,4 @@
-﻿package sample.common.io;
+package sample.common.io;
 
 import java.util.List;
 import java.util.Map;

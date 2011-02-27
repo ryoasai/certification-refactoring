@@ -1,4 +1,4 @@
-﻿package sample.common.io;
+package sample.common.io;
 
 
 import static org.junit.Assert.*;

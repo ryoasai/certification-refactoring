@@ -1,4 +1,4 @@
-﻿package sample.common;
+package sample.common;
 
 import java.util.ArrayList;
 import java.util.Arrays;

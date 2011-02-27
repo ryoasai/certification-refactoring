@@ -1,4 +1,4 @@
-﻿package sample.app.work_management;
+package sample.app.work_management;
 
 
 import javax.inject.Inject;

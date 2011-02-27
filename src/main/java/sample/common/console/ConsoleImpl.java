@@ -1,4 +1,4 @@
-﻿package sample.common.console;
+package sample.common.console;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

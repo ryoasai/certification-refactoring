@@ -1,4 +1,4 @@
-﻿package sample.app.hr_management;
+package sample.app.hr_management;
 
 
 import javax.inject.Inject;

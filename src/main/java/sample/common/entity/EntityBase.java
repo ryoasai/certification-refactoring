@@ -1,4 +1,4 @@
-﻿package sample.common.entity;
+package sample.common.entity;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

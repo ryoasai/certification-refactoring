@@ -1,4 +1,4 @@
-﻿package sample.domain;
+package sample.domain;
 
 import sample.common.entity.EntityBase;
 import sample.common.entity.NameId;

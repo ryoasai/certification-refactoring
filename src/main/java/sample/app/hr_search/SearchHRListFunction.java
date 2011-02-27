@@ -1,4 +1,4 @@
-﻿package sample.app.hr_search;
+package sample.app.hr_search;
 
 
 import java.util.Arrays;
