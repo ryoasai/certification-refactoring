@@ -3,9 +3,11 @@ package sample.common.io;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -52,9 +54,19 @@ public class CharSeparatedFileRepository<K extends Comparable<K>, E extends Enti
 
 	private final NonDeletedMatcher<E> ALL_MATCHER = NonDeletedMatcher.instance();
 
+	private String encoding = "utf-8";
+	
 	// ====================================================
 	// プロパティ
 	// ====================================================
+
+	public String getEncoding() {
+		return encoding;
+	}
+
+	public void setEncoding(String encoding) {
+		this.encoding = encoding;
+	}
 
 	public File getMasterFile() {
 		return masterFile;
@@ -355,12 +367,12 @@ public class CharSeparatedFileRepository<K extends Comparable<K>, E extends Enti
 	// オリジナルの実装を極力残すことにした。
 
 	private void openForWrite() throws IOException {
-		reader = new BufferedReader(new FileReader(masterFile));
-		writer = new BufferedWriter(new FileWriter(workFile));
+		reader = new BufferedReader(new InputStreamReader(new FileInputStream(masterFile), getEncoding()));
+		writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(workFile), getEncoding()));
 	}
 
 	private void openForRead() throws IOException {
-		reader = new BufferedReader(new FileReader(masterFile));
+		reader = new BufferedReader(new InputStreamReader(new FileInputStream(masterFile), getEncoding()));
 	}
 
 	private void close() {
