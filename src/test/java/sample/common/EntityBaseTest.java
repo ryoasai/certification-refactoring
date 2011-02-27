@@ -1,4 +1,4 @@
-package sample.common;
+﻿package sample.common;
 
 import static org.junit.Assert.*;
 
@@ -27,7 +27,7 @@ public class EntityBaseTest {
 
 		sample.logicalDelete();
 		
-		// ���ɘ_���폜�ς݂̏ꍇ��O�ƂȂ�B
+		// 既に論理削除済みの場合例外となる。
 		sample.logicalDelete();
 	}
 

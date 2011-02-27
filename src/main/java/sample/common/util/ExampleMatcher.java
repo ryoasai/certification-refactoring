@@ -1,4 +1,4 @@
-package sample.common.util;
+ï»¿package sample.common.util;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
@@ -29,11 +29,11 @@ public class ExampleMatcher<T> implements Matcher<T> {
 			
 			Object exampleValue = ReflectionUtils.invokeMethod(readMethod, example);
 			if (exampleValue == null) continue;
-			if (exampleValue instanceof Long && (Long)(exampleValue) == 0) continue; // Šî–{Œ^‚Ìlong‚Ì0‚Í–³‹i‚¢‚Ü‚¢‚¿j
+			if (exampleValue instanceof Long && (Long)(exampleValue) == 0) continue; // åŸºæœ¬å‹ã®longã®0ã¯ç„¡è¦–ï¼ˆã„ã¾ã„ã¡ï¼‰
 
 			Object targetValue = ReflectionUtils.invokeMethod(readMethod, target);
 
-			if (targetValue instanceof String && exampleValue instanceof String) { // •”•ª•¶š—ñˆê’v
+			if (targetValue instanceof String && exampleValue instanceof String) { // éƒ¨åˆ†æ–‡å­—åˆ—ä¸€è‡´
 				if ( ! ((String)targetValue).contains((String)exampleValue)) return false;
 			} else {
 				if (!ObjectUtils.equals(exampleValue, targetValue)) return false;

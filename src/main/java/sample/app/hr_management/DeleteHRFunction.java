@@ -1,4 +1,4 @@
-package sample.app.hr_management;
+ï»¿package sample.app.hr_management;
 
 
 import javax.inject.Inject;
@@ -12,7 +12,7 @@ import sample.domain.HumanResource;
 import sample.repository.HumanResourceRepository;
 
 /**
- * lŞî•ñíœ
+ * äººææƒ…å ±å‰Šé™¤
  */
 @Component
 public class DeleteHRFunction implements Function {
@@ -29,7 +29,7 @@ public class DeleteHRFunction implements Function {
 	private HumanResource selectedHumanResource;
 
 	/**
-	 * lŞŠÇ—(íœ)ƒƒjƒ…[‚ÌÀs
+	 * äººæç®¡ç†(å‰Šé™¤)ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®å®Ÿè¡Œ
 	 */
 	public void run() {
 		selectHumanResource();
@@ -38,10 +38,10 @@ public class DeleteHRFunction implements Function {
 	}
 
 	private void selectHumanResource() {
-		// lŞID“ü—Í
-		long hrId = console.acceptLong("lŞID‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B", new ValidInput<Long>() {
+		// äººæIDå…¥åŠ›
+		long hrId = console.acceptLong("äººæIDã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚", new ValidInput<Long>() {
 			@Override
-			public boolean isValid(Long input) { // lŞID‘¶İƒ`ƒFƒbƒN
+			public boolean isValid(Long input) { // äººæIDå­˜åœ¨ãƒã‚§ãƒƒã‚¯
 				return hrRepository.findById(input) != null;
 			}
 		});
@@ -52,9 +52,9 @@ public class DeleteHRFunction implements Function {
 	}
 	
 	private void deleteHumanResource() {
-		if (console.confirm("‚±‚ÌlŞî•ñ‚ğíœ‚µ‚Ü‚·‚©H(Y ‚Í‚¢@N ‚¢‚¢‚¦)", "Y", "N")) {
+		if (console.confirm("ã“ã®äººææƒ…å ±ã‚’å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ(Y ã¯ã„ã€€N ã„ã„ãˆ)", "Y", "N")) {
 			hrRepository.delete(selectedHumanResource.getId());
-			console.display("íœ‚µ‚Ü‚µ‚½B"); 
+			console.display("å‰Šé™¤ã—ã¾ã—ãŸã€‚"); 
 		}
 	}
 

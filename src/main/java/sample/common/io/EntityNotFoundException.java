@@ -1,4 +1,4 @@
-package sample.common.io;
+﻿package sample.common.io;
 
 import sample.common.SystemException;
 

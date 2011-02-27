@@ -1,4 +1,4 @@
-package sample.app.hr_search;
+ï»¿package sample.app.hr_search;
 
 
 import java.util.Arrays;
@@ -18,21 +18,21 @@ import sample.repository.OccupationRepository;
 
 
 /**
- * lŞŒŸõˆ—
+ * äººææ¤œç´¢å‡¦ç†
  */
 @Component
 public class SearchHRListFunction extends AbstractDispatcher implements Function {
 	
 	/**
-	 * ŒŸõ•û–@ˆê——‚ÌƒŠƒXƒg
+	 * æ¤œç´¢æ–¹æ³•ä¸€è¦§ã®ãƒªã‚¹ãƒˆ
 	 */
 	private static final String[] MENU_LIST = { 
-	  "ŒŸõ•û–@‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢B", 
-	  "N->–¼‚©‚çŒŸõ\tT->‹Æí‚©‚çŒŸõ",
-	  "E->lŞŒŸõI—¹(ƒƒjƒ…[‚É–ß‚é)" };
+	  "æ¤œç´¢æ–¹æ³•ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚", 
+	  "N->æ°åã‹ã‚‰æ¤œç´¢\tT->æ¥­ç¨®ã‹ã‚‰æ¤œç´¢",
+	  "E->äººææ¤œç´¢çµ‚äº†(ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚‹)" };
 
 	/**
-	 * ŒŸõ•û–@ƒR[ƒhˆê——‚ÌƒŠƒXƒg
+	 * æ¤œç´¢æ–¹æ³•ã‚³ãƒ¼ãƒ‰ä¸€è¦§ã®ãƒªã‚¹ãƒˆ
 	 */
 	private static final List<String> CODE_LIST =  Arrays.asList("N", "T", "E" );
 
@@ -53,27 +53,27 @@ public class SearchHRListFunction extends AbstractDispatcher implements Function
 		console.display("");
 		console.display(MENU_LIST);
 		
-		return console.acceptFromList(CODE_LIST, "‚Ç‚Ì‹@”\‚ğÀs‚µ‚Ü‚·‚©H");
+		return console.acceptFromList(CODE_LIST, "ã©ã®æ©Ÿèƒ½ã‚’å®Ÿè¡Œã—ã¾ã™ã‹ï¼Ÿ");
 	}
 	
 	/**
-	 * –¼‚à‚µ‚­‚Í‹Æí‚©‚çŒŸõ‹@”\‚ğŒÄ‚Ño‚·
+	 * æ°åã‚‚ã—ãã¯æ¥­ç¨®ã‹ã‚‰æ¤œç´¢æ©Ÿèƒ½ã‚’å‘¼ã³å‡ºã™
 	 * 
-	 * @param code ‹@”\ƒR[ƒh‚ğ•\‚·®”’l
+	 * @param code æ©Ÿèƒ½ã‚³ãƒ¼ãƒ‰ã‚’è¡¨ã™æ•´æ•°å€¤
 	 */
 	@Override
 	protected void runFunction(String code) {
 		
 		if ("N".equals(code)) {
-			String input = console.accept("–¼‚ÉŠÜ‚Ü‚ê‚é•¶š—ñ‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢B");
+			String input = console.accept("æ°åã«å«ã¾ã‚Œã‚‹æ–‡å­—åˆ—ã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚");
 			searchHRListByName(input);
 			
 		} else if ("T".equals(code)) {
 
-			List<Occupation> occupationList = occupationRepository.findAll(); // ‹ÆíƒŠƒXƒg‚Ìæ“¾
-			String occupationType = console.acceptFromNameIdList(occupationList, "\n‹Æí‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B");
+			List<Occupation> occupationList = occupationRepository.findAll(); // æ¥­ç¨®ãƒªã‚¹ãƒˆã®å–å¾—
+			String occupationType = console.acceptFromNameIdList(occupationList, "\næ¥­ç¨®ã‚’é¸æŠã—ã¦ãã ã•ã„ã€‚");
 				
-			// ‹ÆíID‚©‚çlŞŒŸõ
+			// æ¥­ç¨®IDã‹ã‚‰äººææ¤œç´¢
 			searchHRListByOccupationType(Long.valueOf(occupationType));
 		}
 	}

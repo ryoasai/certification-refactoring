@@ -1,4 +1,4 @@
-package sample.app.hr_management;
+ï»¿package sample.app.hr_management;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ import sample.repository.HumanResourceRepository;
 import sample.repository.OccupationRepository;
 
 /**
- * lŞî•ñ“ü—Íˆ—
+ * äººææƒ…å ±å…¥åŠ›å‡¦ç†
  */
 @Component
 public class InputHRFunction implements Function {
@@ -29,7 +29,7 @@ public class InputHRFunction implements Function {
 	private HumanResource selectedHumanResource;
 
 	/**
-	 * lŞŠÇ—(’Ç‰Á)‚ÌÀs
+	 * äººæç®¡ç†(è¿½åŠ )ã®å®Ÿè¡Œ
 	 */
 	public void run() {
 		
@@ -38,33 +38,33 @@ public class InputHRFunction implements Function {
 		
 		hrRepository.create(selectedHumanResource);
 
-		console.display("lŞIDF" + selectedHumanResource.getId()
-				+ " ‚Å“o˜^‚³‚ê‚Ü‚µ‚½B");
+		console.display("äººæIDï¼š" + selectedHumanResource.getId()
+				+ " ã§ç™»éŒ²ã•ã‚Œã¾ã—ãŸã€‚");
 	}
 
 	/**
-	 * lŞî•ñ‚Ì“ü—Í
+	 * äººææƒ…å ±ã®å…¥åŠ›
 	 * 
 	 * @param occupationList
-	 *            ‹ÆíƒŠƒXƒg‚ğ•\‚·•¶š—ñ”z—ñ
-	 * @return “ü—Íî•ñ
+	 *            æ¥­ç¨®ãƒªã‚¹ãƒˆã‚’è¡¨ã™æ–‡å­—åˆ—é…åˆ—
+	 * @return å…¥åŠ›æƒ…å ±
 	 */
 	public String[] inputData() {
 		String[] data = new String[HumanResourceView.FIELDS.length];
 		
 		for (int i = 1; i < HumanResourceView.FIELDS.length; i++) {
-			if (HumanResourceView.FIELDS[i].equals("«•Ê")) {
-				data[i] = console.accept(HumanResourceView.FIELDS[i] + "‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B", new ValidInput<String>() {
+			if (HumanResourceView.FIELDS[i].equals("æ€§åˆ¥")) {
+				data[i] = console.accept(HumanResourceView.FIELDS[i] + "ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚", new ValidInput<String>() {
 					@Override
 					public boolean isValid(String input) {
 						return "M".equals(input) || "F".equals(input);
 					}
 				});
 			
-			} else if (HumanResourceView.FIELDS[i].equals("‹Æí")) {
-				data[i] = console.acceptFromIdList(occupationRespository.findAll(), HumanResourceView.FIELDS[i] + "‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+			} else if (HumanResourceView.FIELDS[i].equals("æ¥­ç¨®")) {
+				data[i] = console.acceptFromIdList(occupationRespository.findAll(), HumanResourceView.FIELDS[i] + "ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 			} else {
-				data[i] = console.accept(HumanResourceView.FIELDS[i] + "‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+				data[i] = console.accept(HumanResourceView.FIELDS[i] + "ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 			}
 		}
 		

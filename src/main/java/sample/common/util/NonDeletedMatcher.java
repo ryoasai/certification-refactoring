@@ -1,4 +1,4 @@
-package sample.common.util;
+﻿package sample.common.util;
 
 import sample.common.entity.EntityBase;
 

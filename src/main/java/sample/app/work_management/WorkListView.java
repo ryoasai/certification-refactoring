@@ -1,4 +1,4 @@
-package sample.app.work_management;
+ï»¿package sample.app.work_management;
 
 
 import java.util.List;
@@ -16,7 +16,7 @@ import sample.domain.Work;
 import sample.repository.PartnerRepository;
 
 /**
- * ‰Ò“­ÀÑÚ×•\¦
+ * ç¨¼åƒå®Ÿç¸¾è©³ç´°è¡¨ç¤º
  */
 @Component
 public class WorkListView implements View<List<Work>> {
@@ -30,7 +30,7 @@ public class WorkListView implements View<List<Work>> {
 	private Console console;
 	
 	/**
-	 * æˆøæƒŒƒR[ƒh‚ğ•Û‘¶‚·‚éMap
+	 * å–å¼•å…ˆãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’ä¿å­˜ã™ã‚‹Map
 	 */
 	private Map<Long, Partner> partnerMap;
 
@@ -41,26 +41,26 @@ public class WorkListView implements View<List<Work>> {
 
 	
 	/**
-	 * w’è‚³‚ê‚½lŞID‚©‚ç‰Ò“­ó‹µƒ}ƒXƒ^‚ğŒŸõ‚µClŞID‚Ìˆê’v‚·‚éƒŒƒR[ƒh‚ğ Å‘å100Œ‚Ü‚Å”²‚«o‚·
+	 * æŒ‡å®šã•ã‚ŒãŸäººæIDã‹ã‚‰ç¨¼åƒçŠ¶æ³ãƒã‚¹ã‚¿ã‚’æ¤œç´¢ã—ï¼ŒäººæIDã®ä¸€è‡´ã™ã‚‹ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’ æœ€å¤§100ä»¶ã¾ã§æŠœãå‡ºã™
 	 * 
-	 * @return ‰Ò“­ó‹µ
+	 * @return ç¨¼åƒçŠ¶æ³
 	 */
 	public void display(List<Work> workList) {
 		for (Work work : workList.subList(0, Math.min(workList.size(), DISPLAY_LIMIT))) {
 
 			console.display(
 					work.getWorkStatusNo() + "\t" + 
-					work.getStartDate() + "`" + work.getEndDate() + "\t" + 
+					work.getStartDate() + "ï½" + work.getEndDate() + "\t" + 
 					getPartnerName(work.getPartnerId()));
 		}
 	}
 	
 	/**
-	 * æˆøæID‚æ‚èæˆøæ‰ïĞ–¼‚Ìæ“¾
+	 * å–å¼•å…ˆIDã‚ˆã‚Šå–å¼•å…ˆä¼šç¤¾åã®å–å¾—
 	 * 
 	 * @param partnerId
-	 *            æˆøæID‚ğ•\‚·•¶š—ñ
-	 * @return æˆøæ‰ïĞ–¼
+	 *            å–å¼•å…ˆIDã‚’è¡¨ã™æ–‡å­—åˆ—
+	 * @return å–å¼•å…ˆä¼šç¤¾å
 	 */
 	private String getPartnerName(long partnerId) {
 		try {

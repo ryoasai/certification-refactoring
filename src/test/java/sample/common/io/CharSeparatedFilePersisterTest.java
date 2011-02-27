@@ -1,4 +1,4 @@
-package sample.common.io;
+ï»¿package sample.common.io;
 
 
 import static org.junit.Assert.*;
@@ -17,7 +17,7 @@ import sample.common.SampleEntity;
 
 public class CharSeparatedFilePersisterTest {
 
-	// FIXME Às‚Ìƒ[ƒNƒfƒBƒŒƒNƒgƒŠ[‚ªƒ[ƒNƒXƒy[ƒX‚Ìƒ‹[ƒg‚Å‚ ‚é‘O’ñ
+	// FIXME å®Ÿè¡Œæ™‚ã®ãƒ¯ãƒ¼ã‚¯ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªãƒ¼ãŒãƒ¯ãƒ¼ã‚¯ã‚¹ãƒšãƒ¼ã‚¹ã®ãƒ«ãƒ¼ãƒˆã§ã‚ã‚‹å‰æ
 	private static final String SP = SystemUtils.FILE_SEPARATOR;
 	private static final String DATA_DIR = SystemUtils.USER_DIR + SP + "target" + SP + "test-classes";
 
@@ -28,7 +28,7 @@ public class CharSeparatedFilePersisterTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		// ƒeƒXƒgÀsŒã‚É•œŒ³‚µ‚â‚·‚¢‚æ‚¤‚É‚à‚Æ‚à‚Æ‚Ìƒf[ƒ^‚ğƒRƒs[‚µ‚Ä‚©‚ç‘€ì‚·‚éB
+		// ãƒ†ã‚¹ãƒˆå®Ÿè¡Œå¾Œã«å¾©å…ƒã—ã‚„ã™ã„ã‚ˆã†ã«ã‚‚ã¨ã‚‚ã¨ã®ãƒ‡ãƒ¼ã‚¿ã‚’ã‚³ãƒ”ãƒ¼ã—ã¦ã‹ã‚‰æ“ä½œã™ã‚‹ã€‚
 		File originalFile = new File(DATA_DIR, "sample.txt");;
 		
 		masterFile = new File(DATA_DIR, "test.txt");
@@ -49,7 +49,7 @@ public class CharSeparatedFilePersisterTest {
 	}
 
 	//====================================================
-	// ŒŸõŠÖ˜A
+	// æ¤œç´¢é–¢é€£
 	//====================================================
 
 	@Test
@@ -81,7 +81,7 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.findById(2L);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("id = 2‚ÌƒGƒ“ƒeƒBƒeƒB‚Í‘¶İ‚µ‚Ü‚¹‚ñB", ex.getMessage());
+			assertEquals("id = 2ã®ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚", ex.getMessage());
 		}	
 	}
 	
@@ -90,7 +90,7 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.findById(100L);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("id = 100‚ÌƒGƒ“ƒeƒBƒeƒB‚Í‘¶İ‚µ‚Ü‚¹‚ñB", ex.getMessage());
+			assertEquals("id = 100ã®ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚", ex.getMessage());
 		}	
 	}
 
@@ -109,7 +109,7 @@ public class CharSeparatedFilePersisterTest {
 	}
 
 	//====================================================
-	// ì¬ŠÖ˜A
+	// ä½œæˆé–¢é€£
 	//====================================================
 	
 	@Test
@@ -133,7 +133,7 @@ public class CharSeparatedFilePersisterTest {
 	}
 	
 	//====================================================
-	// XVŠÖ˜A
+	// æ›´æ–°é–¢é€£
 	//====================================================
 	
 	@Test
@@ -166,12 +166,12 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.update(sample);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("ƒGƒ“ƒeƒBƒeƒB‚ÍŠù‚É˜_—íœ‚³‚ê‚Ä‚¢‚Ü‚·B", ex.getMessage());
+			assertEquals("ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã¯æ—¢ã«è«–ç†å‰Šé™¤ã•ã‚Œã¦ã„ã¾ã™ã€‚", ex.getMessage());
 		}
 	}
 	
 	//====================================================
-	// íœŠÖ˜A
+	// å‰Šé™¤é–¢é€£
 	//====================================================
 
 	@Test
@@ -184,7 +184,7 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.delete(2L);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("id = 2‚ÌƒGƒ“ƒeƒBƒeƒB‚ÍŠù‚É˜_—íœ‚³‚ê‚Ä‚¢‚Ü‚·B", ex.getMessage());
+			assertEquals("id = 2ã®ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã¯æ—¢ã«è«–ç†å‰Šé™¤ã•ã‚Œã¦ã„ã¾ã™ã€‚", ex.getMessage());
 			
 		}
 	}
@@ -194,7 +194,7 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.delete(100L);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("id = 100‚ÌƒGƒ“ƒeƒBƒeƒB‚Í‘¶İ‚µ‚Ü‚¹‚ñB", ex.getMessage());
+			assertEquals("id = 100ã®ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£ã¯å­˜åœ¨ã—ã¾ã›ã‚“ã€‚", ex.getMessage());
 		}
 	}
 

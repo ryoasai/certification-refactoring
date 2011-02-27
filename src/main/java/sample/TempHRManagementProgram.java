@@ -1,4 +1,4 @@
-package sample;
+ï»¿package sample;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,38 +11,38 @@ import sample.common.program.AbstractMainProgram;
 import sample.common.program.MainProgram;
 
 /**
- * ƒƒCƒ“ƒvƒƒOƒ‰ƒ€
+ * ãƒ¡ã‚¤ãƒ³ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
  */
 @Component("mainProgram")
 public class TempHRManagementProgram extends AbstractMainProgram {
 
 	/**
-	 * ‹@”\ˆê——
+	 * æ©Ÿèƒ½ä¸€è¦§
 	 */
 	private static final String[] MENU_LIST = {
 			"_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/",
-			"            lŞŠÇ—ƒVƒXƒeƒ€",
-			"                ƒƒjƒ…[",
-			"  [1].lŞŒŸõ(S)",
-			"  [2].lŞŠÇ—(JIF’Ç‰Á JUFXV JDFíœ)",
-			"  [3].‰Ò“­ó‹µŠÇ—(KIF’Ç‰Á KDFíœ)",
-			"  [4].I—¹(E)",
+			"            äººæç®¡ç†ã‚·ã‚¹ãƒ†ãƒ ",
+			"                ãƒ¡ãƒ‹ãƒ¥ãƒ¼",
+			"  [1].äººææ¤œç´¢(S)",
+			"  [2].äººæç®¡ç†(JIï¼šè¿½åŠ  JUï¼šæ›´æ–° JDï¼šå‰Šé™¤)",
+			"  [3].ç¨¼åƒçŠ¶æ³ç®¡ç†(KIï¼šè¿½åŠ  KDï¼šå‰Šé™¤)",
+			"  [4].çµ‚äº†(E)",
 			"_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/"};
 
 	/**
-	 * ‹@”\ƒR[ƒhˆê——
+	 * æ©Ÿèƒ½ã‚³ãƒ¼ãƒ‰ä¸€è¦§
 	 */
 	private static final List<String> CODE_LIST = Arrays.asList( "S", "JI", "JU", "JD", "KI", "KD", "E" );
 
 	@Override
 	protected String printMenuAndWaitForInput() {
-		console.display(""); //‰üs
+		console.display(""); //æ”¹è¡Œ
 		console.display(MENU_LIST);
-		return console.acceptFromList(CODE_LIST, "‚Ç‚Ì‹@”\‚ğÀs‚µ‚Ü‚·‚©H");
+		return console.acceptFromList(CODE_LIST, "ã©ã®æ©Ÿèƒ½ã‚’å®Ÿè¡Œã—ã¾ã™ã‹ï¼Ÿ");
 	}
 	
 	/**
-	 * ƒƒCƒ“ƒGƒ“ƒgƒŠ[ƒ|ƒCƒ“ƒg
+	 * ãƒ¡ã‚¤ãƒ³ã‚¨ãƒ³ãƒˆãƒªãƒ¼ãƒã‚¤ãƒ³ãƒˆ
 	 * @param args
 	 */
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package sample.domain;
+﻿package sample.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import sample.common.entity.NameId;
 public class Occupation extends EntityBase<Long> implements NameId<Long> {
 
 
-	/** �Ǝ햼 */
+	/** 業種名 */
 	private String name;
 
 	public String getName() {

@@ -1,26 +1,26 @@
-package sample.domain;
+ï»¿package sample.domain;
 
 import sample.common.entity.EntityBase;
 import sample.common.entity.NameId;
 
 public abstract class Party extends EntityBase<Long> implements NameId<Long> {
 
-	/** –¼ */
+	/** æ°å */
 	private String name;
 
-	/** —X•Ö”Ô† */
+	/** éƒµä¾¿ç•ªå· */
 	private String postalCode;
 
-	/** ZŠ */
+	/** ä½æ‰€ */
 	private String address;
 
-	/** “d˜b”Ô† */
+	/** é›»è©±ç•ªå· */
 	private String telephoneNo;
 
-	/** FAX”Ô† */
+	/** FAXç•ªå· */
 	private String faxNo;
 
-	/** emailƒAƒhƒŒƒX */
+	/** emailã‚¢ãƒ‰ãƒ¬ã‚¹ */
 	private String email;
 
 	public String getName() {

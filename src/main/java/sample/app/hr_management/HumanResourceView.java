@@ -1,4 +1,4 @@
-package sample.app.hr_management;
+ï»¿package sample.app.hr_management;
 
 
 import java.util.Map;
@@ -15,14 +15,14 @@ import sample.domain.Occupation;
 import sample.repository.OccupationRepository;
 
 /**
- * lŞî•ñÚ×•\¦
+ * äººææƒ…å ±è©³ç´°è¡¨ç¤º
  */
 @Component
 public class HumanResourceView implements View<HumanResource> {
 
 	public static final String[] FIELDS = {
-		"lŞID", "–¼", "—X•Ö”Ô†", "ZŠ", "“d˜b”Ô†", "FAX”Ô†", "e-mailƒAƒhƒŒƒX",
-		"¶”NŒ“ú", "«•Ê", "‹Æí", "ŒoŒ±”N”", "ÅIŠw—ğ", "Šó–]’P‰¿" };
+		"äººæID", "æ°å", "éƒµä¾¿ç•ªå·", "ä½æ‰€", "é›»è©±ç•ªå·", "FAXç•ªå·", "e-mailã‚¢ãƒ‰ãƒ¬ã‚¹",
+		"ç”Ÿå¹´æœˆæ—¥", "æ€§åˆ¥", "æ¥­ç¨®", "çµŒé¨“å¹´æ•°", "æœ€çµ‚å­¦æ­´", "å¸Œæœ›å˜ä¾¡" };
 	
 	@Inject
 	private OccupationRepository occupationRepository;
@@ -41,31 +41,31 @@ public class HumanResourceView implements View<HumanResource> {
 		
 		String occupationName = getOccupationName(hr.getOccupationId());
 		
-		console.display(""); // ‰üs
+		console.display(""); // æ”¹è¡Œ
 		String[] hrArray = hr.toArray();
 		
-		// lŞî•ñ‚Ì•\¦
-		// TODO ‚©‚È‚èX‚¢ƒR[ƒh
+		// äººææƒ…å ±ã®è¡¨ç¤º
+		// TODO ã‹ãªã‚Šé†œã„ã‚³ãƒ¼ãƒ‰
 		for (int i = 0; i < FIELDS.length; i++) {
 			StringBuilder sb = new StringBuilder(FIELDS[i] + " : ");
 			
-			if (i == 8) { // «•Ê‚Ì•\¦
+			if (i == 8) { // æ€§åˆ¥ã®è¡¨ç¤º
 				if (hrArray[i].equals("M")) {
-					sb.append("’j");
+					sb.append("ç”·");
 				} else if (hrArray[i].equals("F")) {
-					sb.append("—");
+					sb.append("å¥³");
 				}
 			
 			} else if (i == 9) {
-				sb.append(occupationName); // ‹Æí–¼‚Ì•\¦
+				sb.append(occupationName); // æ¥­ç¨®åã®è¡¨ç¤º
 			} else {
 				sb.append(hrArray[i]);
 			}
 			
 			if (i == 10) {
-				sb.append("”N"); // ŒoŒ±”N”‚Ì•\¦
+				sb.append("å¹´"); // çµŒé¨“å¹´æ•°ã®è¡¨ç¤º
 			} else if (i == 12) {
-				sb.append("‰~"); // Šó–]’P‰¿‚Ì•\¦
+				sb.append("å††"); // å¸Œæœ›å˜ä¾¡ã®è¡¨ç¤º
 			}
 			
 			if (i == 2 || i == 3 || i == 5 || i == 6 || i == 8 || i == 10) {
@@ -79,10 +79,10 @@ public class HumanResourceView implements View<HumanResource> {
 	}
 	
 	/**
-	 * ‹ÆíID‚æ‚è‹Æí–¼‚Ìæ“¾
+	 * æ¥­ç¨®IDã‚ˆã‚Šæ¥­ç¨®åã®å–å¾—
 	 * 
-	 * @param occupationId ‹ÆíID‚ğ•\‚·•¶š—ñ
-	 * @return ‹Æí–¼
+	 * @param occupationId æ¥­ç¨®IDã‚’è¡¨ã™æ–‡å­—åˆ—
+	 * @return æ¥­ç¨®å
 	 */
 	private String getOccupationName(long occupationId) {
 		try {

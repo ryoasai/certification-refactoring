@@ -1,4 +1,4 @@
-package sample.common.console;
+ï»¿package sample.common.console;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,7 +31,7 @@ public class ConsoleImpl implements Console {
 	@Override
 	public void display(String... messages) {
 		for (String line : messages) {
-			System.out.println(line); // ‹@”\ˆê——‚Ì•\¦
+			System.out.println(line); // æ©Ÿèƒ½ä¸€è¦§ã®è¡¨ç¤º
 		}
 	}
 	
@@ -42,7 +42,7 @@ public class ConsoleImpl implements Console {
 			if (yes.equals(input)) return true;
 			if (no.equals(input)) return false;
 			
-			display("\n" + yes + "‚©" + no + "‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+			display("\n" + yes + "ã‹" + no + "ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		}
 	}
 	
@@ -56,14 +56,14 @@ public class ConsoleImpl implements Console {
 	
 	@Override
 	public String accept(String message, ValidInput<String> validInput) {
-		while (true) { // ³‚µ‚­“ü—Í‚³‚ê‚é‚Ü‚Åƒ‹[ƒv
+		while (true) { // æ­£ã—ãå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 			String input = accept(message); 
 		
 			try {
 				if (validInput.isValid(input)) return input;
 			} catch (Exception ex) {
-				// TODO —áŠOˆ—‚ÌêŠ‚ÌŒŸ“¢
-				// ‚à‚Æ‚à‚Æ‚ÌƒR[ƒh‚ğ“®‚«‚ğˆê’U•ÛB
+				// TODO ä¾‹å¤–å‡¦ç†ã®å ´æ‰€ã®æ¤œè¨
+				// ã‚‚ã¨ã‚‚ã¨ã®ã‚³ãƒ¼ãƒ‰ã‚’å‹•ãã‚’ä¸€æ—¦ä¿æŒã€‚
 				ex.printStackTrace();
 			}
 		}
@@ -85,14 +85,14 @@ public class ConsoleImpl implements Console {
 
 	@Override
 	public int acceptInt(String message, ValidInput<Integer> validInput) {
-		while (true) { // ³‚µ‚­“ü—Í‚³‚ê‚é‚Ü‚Åƒ‹[ƒv
+		while (true) { // æ­£ã—ãå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 			int input = acceptInt(message); 
 		
 			try {
 				if (validInput.isValid(input)) return input;
 			} catch (Exception ex) {
-				// TODO —áŠOˆ—‚ÌêŠ‚ÌŒŸ“¢
-				// ‚à‚Æ‚à‚Æ‚ÌƒR[ƒh‚ğ“®‚«‚ğˆê’U•ÛB
+				// TODO ä¾‹å¤–å‡¦ç†ã®å ´æ‰€ã®æ¤œè¨
+				// ã‚‚ã¨ã‚‚ã¨ã®ã‚³ãƒ¼ãƒ‰ã‚’å‹•ãã‚’ä¸€æ—¦ä¿æŒã€‚
 				ex.printStackTrace();
 			}
 		}
@@ -114,14 +114,14 @@ public class ConsoleImpl implements Console {
 	
 	@Override
 	public long acceptLong(String message, ValidInput<Long> validInput) {
-		while (true) { // ³‚µ‚­“ü—Í‚³‚ê‚é‚Ü‚Åƒ‹[ƒv
+		while (true) { // æ­£ã—ãå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§ãƒ«ãƒ¼ãƒ—
 			long input = acceptLong(message); 
 		
 			try {
 				if (validInput.isValid(input)) return input;
 			} catch (Exception ex) {
-				// TODO —áŠOˆ—‚ÌêŠ‚ÌŒŸ“¢
-				// ‚à‚Æ‚à‚Æ‚ÌƒR[ƒh‚ğ“®‚«‚ğˆê’U•ÛB
+				// TODO ä¾‹å¤–å‡¦ç†ã®å ´æ‰€ã®æ¤œè¨
+				// ã‚‚ã¨ã‚‚ã¨ã®ã‚³ãƒ¼ãƒ‰ã‚’å‹•ãã‚’ä¸€æ—¦ä¿æŒã€‚
 				ex.printStackTrace();
 			}
 		}
@@ -180,12 +180,12 @@ public class ConsoleImpl implements Console {
 			buff.append("\n");
 		}
 		
-		buff.append(" ["); // IDƒŠƒXƒg‚Ì•\¦
+		buff.append(" ["); // IDãƒªã‚¹ãƒˆã®è¡¨ç¤º
 		for (NameId<?> partner : nameIdList) {
 			buff.append(partner.getId());
 			buff.append(",");
 		}
-		buff.deleteCharAt(buff.length() - 1); // ––”ö‚Ì","‚ğíœ
+		buff.deleteCharAt(buff.length() - 1); // æœ«å°¾ã®","ã‚’å‰Šé™¤
 		buff.append("]");
 		
 		return buff.toString();
@@ -215,12 +215,12 @@ public class ConsoleImpl implements Console {
 			buff.append("\n");
 		}
 		
-		buff.append(" ["); // IDƒŠƒXƒg‚Ì•\¦
+		buff.append(" ["); // IDãƒªã‚¹ãƒˆã®è¡¨ç¤º
 		for (Identifiable<?> partner : idList) {
 			buff.append(partner.getId());
 			buff.append(",");
 		}
-		buff.deleteCharAt(buff.length() - 1); // ––”ö‚Ì","‚ğíœ
+		buff.deleteCharAt(buff.length() - 1); // æœ«å°¾ã®","ã‚’å‰Šé™¤
 		buff.append("]");
 		
 		return buff.toString();
@@ -240,9 +240,9 @@ public class ConsoleImpl implements Console {
 	
 	
 	/**
-	 * ƒL[ƒ{[ƒh‚©‚ç‚Ì“ü—Íóæ‚è
+	 * ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰ã‹ã‚‰ã®å…¥åŠ›å—å–ã‚Š
 	 * 
-	 * @return “ü—Í•¶š—ñ
+	 * @return å…¥åŠ›æ–‡å­—åˆ—
 	 */
 	private String doAcceptChars() {
 		int c;
@@ -269,7 +269,7 @@ public class ConsoleImpl implements Console {
 			
 			isr.close();
 		} catch (IOException e) {
-			System.err.println("“ü—Íóæ‚èƒGƒ‰[:" + e.getMessage());
+			System.err.println("å…¥åŠ›å—å–ã‚Šã‚¨ãƒ©ãƒ¼:" + e.getMessage());
 		}
 		
 		return null;

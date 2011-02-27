@@ -1,4 +1,4 @@
-package sample.common.program;
+ï»¿package sample.common.program;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import sample.common.console.Console;
 
 /**
- * lŞ”hŒ­ŠÇ—ƒvƒƒOƒ‰ƒ€ƒƒCƒ“ƒNƒ‰ƒX
+ * äººææ´¾é£ç®¡ç†ãƒ—ãƒ­ã‚°ãƒ©ãƒ ãƒ¡ã‚¤ãƒ³ã‚¯ãƒ©ã‚¹
  */
 public abstract class AbstractMainProgram extends AbstractDispatcher implements MainProgram {
 
@@ -33,7 +33,7 @@ public abstract class AbstractMainProgram extends AbstractDispatcher implements 
 	}
 
 	/**
-	 * ‹@”\ˆê——‚Æ‹@”\ƒR[ƒhˆê——‚ğ•\¦‚µC‹@”\ƒR[ƒh‚ğæ“¾‚µ‚ÄŠY“–‚Ì‹@”\‚ğŒÄ‚Ño‚·
+	 * æ©Ÿèƒ½ä¸€è¦§ã¨æ©Ÿèƒ½ã‚³ãƒ¼ãƒ‰ä¸€è¦§ã‚’è¡¨ç¤ºã—ï¼Œæ©Ÿèƒ½ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã—ã¦è©²å½“ã®æ©Ÿèƒ½ã‚’å‘¼ã³å‡ºã™
 	 */
 	@Override
 	protected void runFunction(String inputCode) {
@@ -45,12 +45,12 @@ public abstract class AbstractMainProgram extends AbstractDispatcher implements 
 		try {
 			subFunction.run();
 		} catch (Exception ex) {
-			// TODO “KØ‚È—áŠOˆ—
+			// TODO é©åˆ‡ãªä¾‹å¤–å‡¦ç†
 			ex.printStackTrace();
 		}
 		
-		if (isConfirm(inputCode)) { // lŞŠÇ—‚Æ‰Ò“­ó‹µŠÇ—‚Ì‚İ
-			console.accept("ƒGƒ“ƒ^[ƒL[‚ğ‰Ÿ‚·‚Æƒƒjƒ…[‚É–ß‚è‚Ü‚·B");
+		if (isConfirm(inputCode)) { // äººæç®¡ç†ã¨ç¨¼åƒçŠ¶æ³ç®¡ç†ã®ã¿
+			console.accept("ã‚¨ãƒ³ã‚¿ãƒ¼ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã«æˆ»ã‚Šã¾ã™ã€‚");
 		}
 	}
 }

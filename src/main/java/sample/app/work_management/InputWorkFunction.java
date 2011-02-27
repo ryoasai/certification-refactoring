@@ -1,4 +1,4 @@
-package sample.app.work_management;
+ï»¿package sample.app.work_management;
 
 
 import javax.inject.Inject;
@@ -14,7 +14,7 @@ import sample.repository.PartnerRepository;
 import sample.repository.WorkRepository;
 
 /**
- * ‰Ò“­ó‹µ“ü—Í
+ * ç¨¼åƒçŠ¶æ³å…¥åŠ›
  */
 @Component
 public class InputWorkFunction implements Function {
@@ -32,7 +32,7 @@ public class InputWorkFunction implements Function {
 	private Console console;
 	
 	/**
-	 * ‰Ò“­ó‹µŠÇ—(’Ç‰Á)‚ÌÀs
+	 * ç¨¼åƒçŠ¶æ³ç®¡ç†(è¿½åŠ )ã®å®Ÿè¡Œ
 	 */
 	public void run() {
 		Work work = inputData();
@@ -42,34 +42,34 @@ public class InputWorkFunction implements Function {
 
 
 	/**
-	 * ‰Ò“­ó‹µ‚Ì“ü—Í
+	 * ç¨¼åƒçŠ¶æ³ã®å…¥åŠ›
 	 */
 	private Work inputData() {
 		Work work = new Work();
 		
-		long hrId = console.acceptLong("lŞID‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B", new ValidInput<Long>() {
+		long hrId = console.acceptLong("äººæIDã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚", new ValidInput<Long>() {
 			@Override
-			public boolean isValid(Long input) { // lŞID‘¶İƒ`ƒFƒbƒN
+			public boolean isValid(Long input) { // äººæIDå­˜åœ¨ãƒã‚§ãƒƒã‚¯
 				return hrRepository.findById(input) != null;
 			}
 		});
 
 		work.setHrId(hrId);
-		work.setPartnerId(Long.valueOf(console.acceptFromNameIdList(partnerRepository.findAll(), "æˆøæ‚ğ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B")));
-		work.setStartDate(console.accept("‰Ò“®ŠJn“ú‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B"));
-		work.setEndDate(console.accept("‰Ò“®I—¹“ú‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B"));
-		work.setContractSalary(console.accept("Œ_–ñ’P‰¿‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B"));
+		work.setPartnerId(Long.valueOf(console.acceptFromNameIdList(partnerRepository.findAll(), "å–å¼•å…ˆã‚’é¸æŠã—ã¦ãã ã•ã„ã€‚")));
+		work.setStartDate(console.accept("ç¨¼å‹•é–‹å§‹æ—¥ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"));
+		work.setEndDate(console.accept("ç¨¼å‹•çµ‚äº†æ—¥ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"));
+		work.setContractSalary(console.accept("å¥‘ç´„å˜ä¾¡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚"));
 		
 		return work;
 	}
 
 	/**
-	 * ‰Ò“­ó‹µ‚Ìƒtƒ@ƒCƒ‹‚Ö‚Ì“o˜^
+	 * ç¨¼åƒçŠ¶æ³ã®ãƒ•ã‚¡ã‚¤ãƒ«ã¸ã®ç™»éŒ²
 	 */
 	private void doCreate(Work work) {
 		workRepository.create(work);
 		
-		console.display("“o˜^‚³‚ê‚Ü‚µ‚½B");
+		console.display("ç™»éŒ²ã•ã‚Œã¾ã—ãŸã€‚");
 	}
 
 }

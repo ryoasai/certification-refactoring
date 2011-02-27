@@ -1,4 +1,4 @@
-package sample.common.io;
+﻿package sample.common.io;
 
 import java.util.List;
 import java.util.Map;
@@ -6,62 +6,62 @@ import java.util.Map;
 import sample.common.entity.EntityBase;
 
 /**
- * �G���e�B�e�B���i�������邽�߂̃��|�W�g���[�N���X���������ׂ��C���^�[�t�F�[�X�ł��B
+ * エンティティを永続化するためのレポジトリークラスが実装すべきインターフェースです。
  *
- * @param <E> �G���e�B�e�B�ɑ΂��鑍�̌^�p�����[�^�[
+ * @param <E> エンティティに対する総称型パラメーター
  */
 public interface Repository<K extends Comparable<K>, E extends EntityBase<K>> {
 
 	/**
-	 * ID�ŃG���e�B�e�B����������B�i�_���폜�ς݂̃G���e�B�e�B�͏��O����B�j
-	 * �G���e�B�e�B��������Ȃ��ꍇ��EntityNotFoundException�����o�����B
+	 * IDでエンティティを検索する。（論理削除済みのエンティティは除外する。）
+	 * エンティティが見つからない場合はEntityNotFoundExceptionが送出される。
 	 * 
 	 * @param id ID
-	 * @return �������ʂ̃G���e�B�e�B
-	 * @throws EntityNotFoundException �G���e�B�e�B��������Ȃ��ꍇ
+	 * @return 検索結果のエンティティ
+	 * @throws EntityNotFoundException エンティティが見つからない場合
 	 */
 	E findById(K id);
 
 	/**
-	 * �G���e�B�e�B��S����������B�i�_���폜�ς݂̃G���e�B�e�B�͏��O����B�j
-	 * �G���e�B�e�B��������Ȃ��ꍇ�͋��List���Ԃ�B
+	 * エンティティを全件検索する。（論理削除済みのエンティティは除外する。）
+	 * エンティティが見つからない場合は空のListが返る。
 	 * 
-	 * @return �G���e�B�e�B�̃��X�g
-	 * @throws EntityNotFoundException �G���e�B�e�B��������Ȃ��ꍇ
+	 * @return エンティティのリスト
+	 * @throws EntityNotFoundException エンティティが見つからない場合
 	 */
 	List<E> findAll();
 
 	/**
-	 * �G���e�B�e�B��S����������B�i�_���폜�ς݂̃G���e�B�e�B�͏��O����B�j
-	 * �G���e�B�e�B��ID���L�[�Ƃ���}�b�v��Ԃ��B
+	 * エンティティを全件検索する。（論理削除済みのエンティティは除外する。）
+	 * エンティティのIDをキーとするマップを返す。
 	 * 
-	 * @return �G���e�B�e�B��ID���L�[�Ƃ���}�b�v
-	 * @throws EntityNotFoundException �G���e�B�e�B��������Ȃ��ꍇ
+	 * @return エンティティのIDをキーとするマップ
+	 * @throws EntityNotFoundException エンティティが見つからない場合
 	 */
 	Map<K, E> findAllAsMap();
 
 	/**
-	 * �G���e�B�e�B�̑����l���ƍ����Č�������
-	 * @param example �����Ώۂ̑����l���i�[�����I�u�W�F�N�g
-	 * @return �������ʂɈ�v�����G���e�B�e�B�̃��X�g
+	 * エンティティの属性値を照合して検索する
+	 * @param example 検索対象の属性値を格納したオブジェクト
+	 * @return 検索結果に一致したエンティティのリスト
 	 */
 	List<E> findByExample(E example);
 
 	/**
-	 * �G���e�B�e�B��V�K�쐬����B
-	 * @param data �쐬�Ώۂ̃G���e�B�e�B
+	 * エンティティを新規作成する。
+	 * @param data 作成対象のエンティティ
 	 */
 	void create(E data);
 
 	/**
-	 * �G���e�B�e�B���X�V����B
-	 * @param data �X�V�Ώۂ̃G���e�B�e�B
+	 * エンティティを更新する。
+	 * @param data 更新対象のエンティティ
 	 */
 	void update(E data);
 
 	/**
-	 * �G���e�B�e�B��_���폜����B
-	 * @param data �_���폜�Ώۂ̃G���e�B�e�B
+	 * エンティティを論理削除する。
+	 * @param data 論理削除対象のエンティティ
 	 */
 	void delete(K id);
 

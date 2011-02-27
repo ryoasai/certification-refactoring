@@ -1,4 +1,4 @@
-package sample.app.hr_search;
+ï»¿package sample.app.hr_search;
 
 import java.util.Arrays;
 import java.util.List;
@@ -25,14 +25,14 @@ import sample.repository.WorkRepository;
 public class HumanResourceListView extends AbstractDispatcher implements View<List<HumanResource>> {
 
 	/**
-	 * ‹@”\ˆê——
+	 * æ©Ÿèƒ½ä¸€è¦§
 	 */
-	private static final String[] MENU_LIST = { "P->‘O‚Ì10Œ\tN->Ÿ‚Ì10Œ", "E->ŒŸõˆê——I—¹( ŒŸõğŒw’è‚É–ß‚é )" };
+	private static final String[] MENU_LIST = { "P->å‰ã®10ä»¶\tN->æ¬¡ã®10ä»¶", "E->æ¤œç´¢ä¸€è¦§çµ‚äº†( æ¤œç´¢æ¡ä»¶æŒ‡å®šã«æˆ»ã‚‹ )" };
 
 	/**
-	 * ƒƒjƒ…[•¶š—ñ
+	 * ãƒ¡ãƒ‹ãƒ¥ãƒ¼æ–‡å­—åˆ—
 	 */
-	private static final List<String> CODE_LIST = Arrays.asList("lŞID", "P", "N", "E" );
+	private static final List<String> CODE_LIST = Arrays.asList("äººæID", "P", "N", "E" );
 
 	@Inject
 	private HumanResourceRepository hrRepository;
@@ -54,14 +54,14 @@ public class HumanResourceListView extends AbstractDispatcher implements View<Li
 
 	
 	/**
-	 * ‹ÆíƒŠƒXƒg
+	 * æ¥­ç¨®ãƒªã‚¹ãƒˆ
 	 */
 	private List<Occupation> occupationList;
 	
 	private List<HumanResource> hrList;
 	
 	/**
-	 * ƒy[ƒW”Ô†
+	 * ãƒšãƒ¼ã‚¸ç•ªå·
 	 */
 	private int page = 1;
 	
@@ -91,22 +91,22 @@ public class HumanResourceListView extends AbstractDispatcher implements View<Li
 	@Override
 	protected void runFunction(String inputCode) {
 		if ("P".equals(inputCode)) {
-			 // ‘O‚Ì10Œ
+			 // å‰ã®10ä»¶
 			if (page > 1) {
 				previous();
 			}
 		} else if ("N".equals(inputCode)) {
-			// Ÿ‚Ì10Œ
+			// æ¬¡ã®10ä»¶
 			next();
-		} else { // lŞID“ü—Í
+		} else { // äººæIDå…¥åŠ›
 			displayHumanResource(inputCode);
 		}		
 	}
 	
 	/**
-	 * lŞˆê——‚Ì•\¦
+	 * äººæä¸€è¦§ã®è¡¨ç¤º
 	 * 
-	 * @return •\¦Œ”
+	 * @return è¡¨ç¤ºä»¶æ•°
 	 */
 	@Override
 	public void display(List<HumanResource> hrList) {
@@ -117,24 +117,24 @@ public class HumanResourceListView extends AbstractDispatcher implements View<Li
 
 	@Override
 	protected String printMenuAndWaitForInput() {
-		console.display(""); // ‰üs
-		console.display(MENU_LIST); // ‹@”\ˆê——‚Ì•\¦
+		console.display(""); // æ”¹è¡Œ
+		console.display(MENU_LIST); // æ©Ÿèƒ½ä¸€è¦§ã®è¡¨ç¤º
 		
 		return console.acceptFromList(CODE_LIST, "");
 	}
 	
 	private void displayHRListOnPage() {
-		while (true) { // lŞî•ñ‚ªƒqƒbƒg‚µ‚È‚¯‚ê‚Î•\¦‚ğŒJ‚è•Ô‚·
+		while (true) { // äººææƒ…å ±ãŒãƒ’ãƒƒãƒˆã—ãªã‘ã‚Œã°è¡¨ç¤ºã‚’ç¹°ã‚Šè¿”ã™
 			if (doDisplayHRListOnPage() > 0 || page == 1)
-				break; // lŞˆê——‚ª•\¦‚³‚ê‚½‚©1ƒy[ƒW–Ú‚Ì‚Æ‚«‚Éƒ‹[ƒv‚ğ”²‚¯‚é
+				break; // äººæä¸€è¦§ãŒè¡¨ç¤ºã•ã‚ŒãŸã‹1ãƒšãƒ¼ã‚¸ç›®ã®ã¨ãã«ãƒ«ãƒ¼ãƒ—ã‚’æŠœã‘ã‚‹
 			
-			previous(); // •\¦‚·‚éƒŒƒR[ƒh‚ª‚È‚¯‚ê‚Î1ƒy[ƒW‘O‚ğ•\¦
+			previous(); // è¡¨ç¤ºã™ã‚‹ãƒ¬ã‚³ãƒ¼ãƒ‰ãŒãªã‘ã‚Œã°1ãƒšãƒ¼ã‚¸å‰ã‚’è¡¨ç¤º
 		}
 	}
 	
 	private int doDisplayHRListOnPage() {
-		console.display("ŒŸõŒ‹‰Êˆê——");
-		int count = 0; // •\¦Œ”
+		console.display("æ¤œç´¢çµæœä¸€è¦§");
+		int count = 0; // è¡¨ç¤ºä»¶æ•°
 
 		for (int i = (page - 1) * 10; i < page * 10; i++) {
 			if (i >= hrList.size()) break;
@@ -143,14 +143,14 @@ public class HumanResourceListView extends AbstractDispatcher implements View<Li
 			
 			console.display(
 				hr.getId() + "\t" + hr.getName() + "\t" 
-				+ ((hr.getName().length() < 4) ? "\t" : "") // 3•¶šˆÈ‰º‚Ì–¼‘O‚Ì‚Æ‚«ƒ^ƒu’Ç‰Á
+				+ ((hr.getName().length() < 4) ? "\t" : "") // 3æ–‡å­—ä»¥ä¸‹ã®åå‰ã®ã¨ãã‚¿ãƒ–è¿½åŠ 
 				+ getOccupationName(hr.getOccupationId()));
 
-			count++; // •\¦Œ”‚ğƒJƒEƒ“ƒg
+			count++; // è¡¨ç¤ºä»¶æ•°ã‚’ã‚«ã‚¦ãƒ³ãƒˆ
 		}
 		
 		if (count == 0) {
-			console.display("lŞî•ñ‚Í‚ ‚è‚Ü‚¹‚ñB\n");
+			console.display("äººææƒ…å ±ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚\n");
 		}
 		
 		return count;
@@ -162,28 +162,28 @@ public class HumanResourceListView extends AbstractDispatcher implements View<Li
 			HumanResource hr = hrRepository.findById(Long.parseLong(inputCode));
 			hrView.display(hr);
 
-			// lŞID‚ÌƒZƒbƒg
-			if (hr == null) { // lŞî•ñ‚ğ•\¦
-				console.display("“ü—Í‚³‚ê‚½lŞî•ñ‚Í“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+			// äººæIDã®ã‚»ãƒƒãƒˆ
+			if (hr == null) { // äººææƒ…å ±ã‚’è¡¨ç¤º
+				console.display("å…¥åŠ›ã•ã‚ŒãŸäººææƒ…å ±ã¯ç™»éŒ²ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚");
 			}
 			
-			console.display("\n‰Ò“­ó‹µ---------------------------------------------");
+			console.display("\nç¨¼åƒçŠ¶æ³---------------------------------------------");
 			workListView.display(findWorkListByHRId(hr.getId()));
 			
-			console.accept("ƒGƒ“ƒ^[ƒL[‚ğ‰Ÿ‚·‚ÆŒŸõŒ‹‰Êˆê——‚É–ß‚è‚Ü‚·B");
+			console.accept("ã‚¨ãƒ³ã‚¿ãƒ¼ã‚­ãƒ¼ã‚’æŠ¼ã™ã¨æ¤œç´¢çµæœä¸€è¦§ã«æˆ»ã‚Šã¾ã™ã€‚");
 			
 		} catch (NumberFormatException e) {
-			console.display("“ü—Í‚³‚ê‚½lŞî•ñ‚Í“o˜^‚³‚ê‚Ä‚¢‚Ü‚¹‚ñB");
+			console.display("å…¥åŠ›ã•ã‚ŒãŸäººææƒ…å ±ã¯ç™»éŒ²ã•ã‚Œã¦ã„ã¾ã›ã‚“ã€‚");
 		}
 	}
 	
 	
 	/**
-	 * ‹ÆíID‚©‚ç‹Æí–¼‚Ìæ“¾
+	 * æ¥­ç¨®IDã‹ã‚‰æ¥­ç¨®åã®å–å¾—
 	 * 
 	 * @param occupationId
-	 *            ‹ÆíID‚ğ•\‚·•¶š—ñ
-	 * @return ‹Æí–¼
+	 *            æ¥­ç¨®IDã‚’è¡¨ã™æ–‡å­—åˆ—
+	 * @return æ¥­ç¨®å
 	 */
 	public String getOccupationName(long occupationId) {
 		for (Occupation occupation : occupationList) {

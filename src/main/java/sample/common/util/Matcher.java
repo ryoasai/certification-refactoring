@@ -1,4 +1,4 @@
-package sample.common.util;
+﻿package sample.common.util;
 
 public interface Matcher<T> {
 

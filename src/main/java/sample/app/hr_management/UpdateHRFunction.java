@@ -1,4 +1,4 @@
-package sample.app.hr_management;
+ï»¿package sample.app.hr_management;
 
 import javax.inject.Inject;
 
@@ -12,7 +12,7 @@ import sample.repository.HumanResourceRepository;
 import sample.repository.OccupationRepository;
 
 /**
- * lŞî•ñXV
+ * äººææƒ…å ±æ›´æ–°
  */
 @Component
 public class UpdateHRFunction implements Function {
@@ -32,29 +32,29 @@ public class UpdateHRFunction implements Function {
 	private HumanResource selectedHumanResource;
 
 	/**
-	 * lŞŠÇ—(XV)ƒƒjƒ…[‚ÌÀs
+	 * äººæç®¡ç†(æ›´æ–°)ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®å®Ÿè¡Œ
 	 */
 	public void run() {
 		selectHumanResource();
 		
 		int itemNo = inputItemNo();
-		if (itemNo < 1 || itemNo > 12) { // €–Ú”Ô†“ü—ÍƒGƒ‰[
-			console.display("€–Ú”Ô†‚Ì“ü—Í‚ª³‚µ‚­‚ ‚è‚Ü‚¹‚ñB");
-			console.display("XV‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B");
+		if (itemNo < 1 || itemNo > 12) { // é …ç›®ç•ªå·å…¥åŠ›ã‚¨ãƒ©ãƒ¼
+			console.display("é …ç›®ç•ªå·ã®å…¥åŠ›ãŒæ­£ã—ãã‚ã‚Šã¾ã›ã‚“ã€‚");
+			console.display("æ›´æ–°ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚");
 			return;
 		}
 
 		inputData(itemNo);
 
-		// “ü—Í‚³‚ê‚½’l‚ğƒtƒ@ƒCƒ‹‚É•Û‘¶
+		// å…¥åŠ›ã•ã‚ŒãŸå€¤ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¿å­˜
 		hrRepository.update(selectedHumanResource);
 	}
 	
 	private void selectHumanResource() {
-		// lŞID“ü—Í
-		long hrId = console.acceptLong("lŞID‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B", new ValidInput<Long>() {
+		// äººæIDå…¥åŠ›
+		long hrId = console.acceptLong("äººæIDã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚", new ValidInput<Long>() {
 			@Override
-			public boolean isValid(Long input) { // lŞID‘¶İƒ`ƒFƒbƒN
+			public boolean isValid(Long input) { // äººæIDå­˜åœ¨ãƒã‚§ãƒƒã‚¯
 				return hrRepository.findById(input) != null;
 			}
 		});
@@ -67,7 +67,7 @@ public class UpdateHRFunction implements Function {
 	
 	private int inputItemNo() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("\nXV‚µ‚½‚¢€–Ú‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B\n");
+		sb.append("\næ›´æ–°ã—ãŸã„é …ç›®ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚\n");
 		
 		displayMenuItems(sb);
 
@@ -77,8 +77,8 @@ public class UpdateHRFunction implements Function {
 	private void displayMenuItems(StringBuilder buff) {
 		for (int i = 1; i < HumanResourceView.FIELDS.length; i++) {
 			buff.append(i + "." + HumanResourceView.FIELDS[i]);
-			// TODO ‚©‚È‚èX‚¢ƒƒWƒbƒN‚¾‚ªAŒ»ó‚ÌƒƒWƒbƒN‚ğ•Û‘¶‚µ‚Ä‚¨‚­B
-			// –{—ˆ‚Íƒ^ƒuˆÊ’u‚ğ”Ä—p“I‚É©“®’²®‚·‚éƒƒWƒbƒN‚ğ‘‚­‚×‚«
+			// TODO ã‹ãªã‚Šé†œã„ãƒ­ã‚¸ãƒƒã‚¯ã ãŒã€ç¾çŠ¶ã®ãƒ­ã‚¸ãƒƒã‚¯ã‚’ä¿å­˜ã—ã¦ãŠãã€‚
+			// æœ¬æ¥ã¯ã‚¿ãƒ–ä½ç½®ã‚’æ±ç”¨çš„ã«è‡ªå‹•èª¿æ•´ã™ã‚‹ãƒ­ã‚¸ãƒƒã‚¯ã‚’æ›¸ãã¹ã
 			
 			if (i == 1 || i == 8 || i == 9)
 				buff.append("\t");
@@ -92,17 +92,17 @@ public class UpdateHRFunction implements Function {
 	}
 
 	/**
-	 * lŞî•ñ‚Ì“ü—Í
+	 * äººææƒ…å ±ã®å…¥åŠ›
 	 * 
 	 * @param occupationList
-	 *            ‹ÆíƒŠƒXƒg‚ğ•\‚·•¶š—ñ”z—ñ
-	 * @return “ü—Íî•ñ
+	 *            æ¥­ç¨®ãƒªã‚¹ãƒˆã‚’è¡¨ã™æ–‡å­—åˆ—é…åˆ—
+	 * @return å…¥åŠ›æƒ…å ±
 	 */
 	public void inputData(int itemNo) {
 		String[] data = selectedHumanResource.toArray();
 
 		if (itemNo == 8) {
-			data[itemNo] = console.accept("XVŒã‚Ì’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B(MF’j« FF—«)\n[M,F]", new ValidInput<String>() {
+			data[itemNo] = console.accept("æ›´æ–°å¾Œã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚(Mï¼šç”·æ€§ Fï¼šå¥³æ€§)\n[M,F]", new ValidInput<String>() {
 				@Override
 				public boolean isValid(String input) {
 					return "M".equals(input) || "F".equals(input);
@@ -110,9 +110,9 @@ public class UpdateHRFunction implements Function {
 			});
 		
 		} else if (itemNo == 9) {
-			data[itemNo] = console.acceptFromIdList(occupationRespository.findAll(), "XVŒã‚Ì’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+			data[itemNo] = console.acceptFromIdList(occupationRespository.findAll(), "æ›´æ–°å¾Œã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		} else {
-			data[itemNo] = console.accept("XVŒã‚Ì’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B");
+			data[itemNo] = console.accept("æ›´æ–°å¾Œã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚");
 		}
 	
 		selectedHumanResource.fromArray(data);

@@ -1,4 +1,4 @@
-package sample.common.console;
+ï»¿package sample.common.console;
 
 import java.util.Date;
 import java.util.List;
@@ -7,84 +7,84 @@ import sample.common.entity.Identifiable;
 import sample.common.entity.NameId;
 
 /**
- * ƒRƒ“ƒ\[ƒ‹o—Íˆ—‚ğƒJƒvƒZƒ‹‰»‚·‚é‚½‚ß‚ÌƒCƒ“ƒ^[ƒtƒF[ƒX
+ * ã‚³ãƒ³ã‚½ãƒ¼ãƒ«å‡ºåŠ›å‡¦ç†ã‚’ã‚«ãƒ—ã‚»ãƒ«åŒ–ã™ã‚‹ãŸã‚ã®ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹
  */
 public interface Console {
 
 	/**
-	 * ƒƒbƒZ[ƒW‚ğ•\¦‚·‚éB
-	 * @param messages •\¦‘ÎÛƒƒbƒZ[ƒW
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+	 * @param messages è¡¨ç¤ºå¯¾è±¡ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
 	 */
 	void display(String... messages);
 
 	/**
-	 * YesNo‚Ì‘I‘ğƒƒbƒZ[ƒW‚ğ•\¦‚·‚éB
-	 * @param message •\¦‘ÎÛƒƒbƒZ[ƒW
-	 * @return Yes‚ª‘I‘ğ‚³‚ê‚½ê‡‚Ítrue
+	 * YesNoã®é¸æŠãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+	 * @param message è¡¨ç¤ºå¯¾è±¡ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return YesãŒé¸æŠã•ã‚ŒãŸå ´åˆã¯true
 	 */
 	boolean confirm(String message, String yes, String no);
 	
 	/**
-	 * ƒƒbƒZ[ƒW‚Æ‚Æ‚à‚É“ü—Íƒvƒƒ“ƒvƒg‚ğ•\¦‚µA•W€“ü—Í‚©‚ç‚Ì“ü—Í‚ğó‚¯•t‚¯‚é
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨ã¨ã‚‚ã«å…¥åŠ›ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã—ã€æ¨™æº–å…¥åŠ›ã‹ã‚‰ã®å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹
 	 * 
-	 * @param •\¦ƒƒbƒZ[ƒW
-	 * @return “ü—Í•¶š—ñ
+	 * @param è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return å…¥åŠ›æ–‡å­—åˆ—
 	 */
 	String accept(String message);
 
 	/**
-	 * ƒƒbƒZ[ƒW‚Æ‚Æ‚à‚É“ü—Íƒvƒƒ“ƒvƒg‚ğ•\¦‚µA•W€“ü—Í‚©‚ç‚Ì“ü—Í‚ğó‚¯•t‚¯‚éB
-	 * ³‚µ‚¢“ü—Í’l‚ª“¾‚ç‚ê‚é‚Ü‚ÅAÄ“x“ü—Í‚ğŒJ‚è•Ô‚·B
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨ã¨ã‚‚ã«å…¥åŠ›ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã—ã€æ¨™æº–å…¥åŠ›ã‹ã‚‰ã®å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹ã€‚
+	 * æ­£ã—ã„å…¥åŠ›å€¤ãŒå¾—ã‚‰ã‚Œã‚‹ã¾ã§ã€å†åº¦å…¥åŠ›ã‚’ç¹°ã‚Šè¿”ã™ã€‚
 	 * 
-	 * @param •\¦ƒƒbƒZ[ƒW
-	 * @return “ü—Í•¶š—ñ
+	 * @param è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return å…¥åŠ›æ–‡å­—åˆ—
 	 */
 	String accept(String message, ValidInput<String> validInput);
 
 	/**
-	 * ƒƒbƒZ[ƒW‚Æ‚Æ‚à‚É“ü—Íƒvƒƒ“ƒvƒg‚ğ•\¦‚µA•W€“ü—Í‚©‚ç‚Ì®”“ü—Í‚ğó‚¯•t‚¯‚é
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨ã¨ã‚‚ã«å…¥åŠ›ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã—ã€æ¨™æº–å…¥åŠ›ã‹ã‚‰ã®æ•´æ•°å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹
 	 * 
-	 * @param •\¦ƒƒbƒZ[ƒW
-	 * @return “ü—Í’l
+	 * @param è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return å…¥åŠ›å€¤
 	 */
 	int acceptInt(String message);
 
 	int acceptInt(String message, ValidInput<Integer> validInput);
 
 	/**
-	 * ƒƒbƒZ[ƒW‚Æ‚Æ‚à‚É“ü—Íƒvƒƒ“ƒvƒg‚ğ•\¦‚µA•W€“ü—Í‚©‚ç‚Ì’·®”“ü—Í‚ğó‚¯•t‚¯‚é
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨ã¨ã‚‚ã«å…¥åŠ›ãƒ—ãƒ­ãƒ³ãƒ—ãƒˆã‚’è¡¨ç¤ºã—ã€æ¨™æº–å…¥åŠ›ã‹ã‚‰ã®é•·æ•´æ•°å…¥åŠ›ã‚’å—ã‘ä»˜ã‘ã‚‹
 	 * 
-	 * @param •\¦ƒƒbƒZ[ƒW
-	 * @return “ü—Í’l
+	 * @param è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return å…¥åŠ›å€¤
 	 */
 	long acceptLong(String message);
 
 	long acceptLong(String message, ValidInput<Long> validInput);
 	
 	/**
-	 * yyyyMMdd‘®‚Å“ú•t‚ğ“ü—Í‚·‚éB³‚µ‚¢“ú•t‚ª“ü—Í‚³‚ê‚é‚Ü‚Åˆ—‚ğŒJ‚è•Ô‚·B
+	 * yyyyMMddæ›¸å¼ã§æ—¥ä»˜ã‚’å…¥åŠ›ã™ã‚‹ã€‚æ­£ã—ã„æ—¥ä»˜ãŒå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§å‡¦ç†ã‚’ç¹°ã‚Šè¿”ã™ã€‚
 	 * 
-	 * @param message •\¦ƒƒbƒZ[ƒW
-	 * @return “ü—Í‚³‚ê‚½“ú•t
+	 * @param message è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @return å…¥åŠ›ã•ã‚ŒãŸæ—¥ä»˜
 	 */
 	Date acceptDate(String message);
 
 	/**
-	 * “ú•t‚ğ“ü—Í‚·‚éB³‚µ‚¢“ú•t‚ª“ü—Í‚³‚ê‚é‚Ü‚Åˆ—‚ğŒJ‚è•Ô‚·B
+	 * æ—¥ä»˜ã‚’å…¥åŠ›ã™ã‚‹ã€‚æ­£ã—ã„æ—¥ä»˜ãŒå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§å‡¦ç†ã‚’ç¹°ã‚Šè¿”ã™ã€‚
 	 * 
-	 * @param message •\¦ƒƒbƒZ[ƒW
-	 * @param format “ú•tƒtƒH[ƒ}ƒbƒg
-	 * @return “ü—Í‚³‚ê‚½“ú•t
+	 * @param message è¡¨ç¤ºãƒ¡ãƒƒã‚»ãƒ¼ã‚¸
+	 * @param format æ—¥ä»˜ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
+	 * @return å…¥åŠ›ã•ã‚ŒãŸæ—¥ä»˜
 	 */
 	Date acceptDate(String message, String format);
 
 	/**
-	 * ƒƒbƒZ[ƒW‚Æ‚Æ‚à‚É‘I‘ğˆ‚ÌƒŠƒXƒg‚ğ•\¦‚·‚éB
-	 * ‘I‘ğŒ‹‰Ê‚ğ•Ô‚·B³‚µ‚¢‘I‘ğŒ‹‰Ê‚ª“ü—Í‚³‚ê‚é‚Ü‚ÅA“à•”‚ÅÄ“ü—Í‚ğ‘£‚·B
+	 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã¨ã¨ã‚‚ã«é¸æŠè‚¢ã®ãƒªã‚¹ãƒˆã‚’è¡¨ç¤ºã™ã‚‹ã€‚
+	 * é¸æŠçµæœã‚’è¿”ã™ã€‚æ­£ã—ã„é¸æŠçµæœãŒå…¥åŠ›ã•ã‚Œã‚‹ã¾ã§ã€å†…éƒ¨ã§å†å…¥åŠ›ã‚’ä¿ƒã™ã€‚
 	 * 
 	 * @param selectList
 	 * @param message
-	 * @return ‘I‘ğŒ‹‰Ê
+	 * @return é¸æŠçµæœ
 	 */
 	String acceptFromNameIdList(List<? extends NameId<?>> selectList, String message);
 
