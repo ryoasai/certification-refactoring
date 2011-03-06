@@ -166,7 +166,7 @@ public class CharSeparatedFilePersisterTest {
 		try {
 			target.update(sample);
 		} catch (EntityNotFoundException ex) {
-			assertEquals("エンティティは既に論理削除されています。", ex.getMessage());
+			assertEquals("id = 2のエンティティは既に論理削除されています。", ex.getMessage());
 		}
 	}
 	
