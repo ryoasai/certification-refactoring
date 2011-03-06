@@ -232,7 +232,7 @@ public class CharSeparatedFileRepository<K extends Comparable<K>, E extends Enti
 	}
 
 	@SuppressWarnings("unchecked")
-	private K nextId(K maxId){
+	private K nextId(Object maxId) {
 		if (maxId instanceof Long) {
 			Object nextId = (Long)maxId + 1;
 			return (K) nextId;
